@@ -22,17 +22,15 @@
         flex-direction: column;
         row-gap: 20px;
         width: 100%;
-        height: 100%;
         justify-content: center;
         align-items: center;
-      }
-
-      canvas {
-        border-radius: 20px;
+        overflow: scroll;
       }
 
       #render {
         position: relative;
+        width: 800px;
+        height: 600px;
       }
 
       #circuit {
@@ -144,11 +142,9 @@
     </style>
   </head>
   <body>
-    <h1>Qubit Simulator</h1>
     <script type="module" src="/main.js"></script>
-    <div id="render">
-      <canvas id="canvas"></canvas>
-    </div>
+    <h1>Qubit Simulator</h1>
+    <div id="render"></div>
     <div class="qubitStateContainer">
       <div class="qubitStateTitle">Qubit State</div>
       <div id="qubitState" class="qubitState">|0⟩</div>
