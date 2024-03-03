@@ -1,6 +1,6 @@
 # Qubit Simulator
 
-This is the source code for a 1 quantum circuit simulator.
+This is the source code for a 1 qubit quantum circuit simulator.
 
 It is currently hosted here: https://dazkins.com/qubitSimulator
 
