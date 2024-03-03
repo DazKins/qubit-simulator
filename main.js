@@ -118,7 +118,7 @@ scene.add(zAxis);
 
 const zeroDiv = document.createElement("div");
 zeroDiv.className = "label";
-zeroDiv.textContent = "|0>";
+zeroDiv.textContent = "|0⟩";
 zeroDiv.style.backgroundColor = "transparent";
 
 const zeroLabel = new CSS2DObject(zeroDiv);
@@ -127,7 +127,7 @@ scene.add(zeroLabel);
 
 const oneDiv = document.createElement("div");
 oneDiv.className = "label";
-oneDiv.textContent = "|1>";
+oneDiv.textContent = "|1⟩";
 oneDiv.style.backgroundColor = "transparent";
 
 const oneLabel = new CSS2DObject(oneDiv);
@@ -136,7 +136,7 @@ scene.add(oneLabel);
 
 const plusDiv = document.createElement("div");
 plusDiv.className = "label";
-plusDiv.textContent = "|+>";
+plusDiv.textContent = "|+⟩";
 plusDiv.style.backgroundColor = "transparent";
 
 const plusLabel = new CSS2DObject(plusDiv);
@@ -145,7 +145,7 @@ scene.add(plusLabel);
 
 const minusDiv = document.createElement("div");
 minusDiv.className = "label";
-minusDiv.textContent = "|->";
+minusDiv.textContent = "|-⟩";
 minusDiv.style.backgroundColor = "transparent";
 
 const minusLabel = new CSS2DObject(minusDiv);
@@ -154,7 +154,7 @@ scene.add(minusLabel);
 
 const rDiv = document.createElement("div");
 rDiv.className = "label";
-rDiv.textContent = "|R>";
+rDiv.textContent = "|R⟩";
 rDiv.style.backgroundColor = "transparent";
 
 const rLabel = new CSS2DObject(rDiv);
@@ -163,7 +163,7 @@ scene.add(rLabel);
 
 const lDiv = document.createElement("div");
 lDiv.className = "label";
-lDiv.textContent = "|L>";
+lDiv.textContent = "|L⟩";
 lDiv.style.backgroundColor = "transparent";
 
 const lLabel = new CSS2DObject(lDiv);
@@ -341,14 +341,14 @@ let refreshQubitState = () => {
   const aString = getComplexCoeffString(a);
   const bString = getComplexCoeffString(b);
 
-  if (a[0] == 0 && a[1] == 0) qubitStateString = `${bString} |1>`;
-  else if (b[0] == 0 && b[1] == 0) qubitStateString = `${aString} |0>`;
-  else qubitStateString = `${aString} |0>  +  ${bString} |1>`;
+  if (a[0] == 0 && a[1] == 0) qubitStateString = `${bString} |1⟩`;
+  else if (b[0] == 0 && b[1] == 0) qubitStateString = `${aString} |0⟩`;
+  else qubitStateString = `${aString} |0⟩  +  ${bString} |1⟩`;
 
   qubitStateDiv.innerHTML = qubitStateString;
 
   console.log(
-    `(${qubitState[0][0]} + ${qubitState[0][1]}i) |0> + (${qubitState[1][0]} + ${qubitState[1][1]}i) |1>`
+    `(${qubitState[0][0]} + ${qubitState[0][1]}i) |0⟩ + (${qubitState[1][0]} + ${qubitState[1][1]}i) |1⟩`
   );
 
   return qubitState;
