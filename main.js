@@ -30,6 +30,7 @@ const renderer = new THREE.WebGLRenderer({
   antialias: true,
 });
 renderer.setSize(width, height);
+renderer.domElement.style.borderRadius = "10px";
 renderDiv.appendChild(renderer.domElement);
 
 const sphereGeometry = new THREE.SphereGeometry();
