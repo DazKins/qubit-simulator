@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Qubit Simulator | DazKins</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        font-family: "Roboto Mono", monospace;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      canvas {
+        border-radius: 20px;
+      }
+
+      #render {
+        position: relative;
+      }
+
+      #circuit {
+        display: flex;
+      }
+
+      #gates {
+        display: flex;
+      }
+
+      #controls {
+        display: flex;
+      }
+
+      #qubitState {
+        display: flex;
+      }
+
+      .qubitStateContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgray;
+        padding: 15px;
+        border-radius: 10px;
+        width: 400px;
+        row-gap: 10px;
+        border: 2px solid gray;
+      }
+
+      .qubitStateTitle {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .control {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        background-color: lightgray;
+        border: 2px solid gray;
+        border-radius: 10px;
+        margin: 0px 2px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .gate {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        margin: 0px 8px;
+      }
+
+      .hgate {
+        background-color: lightblue;
+        border: 2px solid blue;
+      }
+
+      .xgate {
+        background-color: lightgreen;
+        border: 2px solid green;
+      }
+
+      .ygate {
+        border: 2px solid coral;
+        background-color: lightcoral;
+      }
+
+      .zgate {
+        border: 2px solid yellow;
+        background-color: lightyellow;
+      }
+
+      .sgate {
+        border: 2px solid pink;
+        background-color: lightpink;
+      }
+
+      .igate {
+        border: 2px solid lightblue;
+        background-color: white;
+      }
+
+      #pointer {
+        position: absolute;
+        width: 5px;
+        height: 58px;
+        transform: translate(-2px, -4px);
+        transition: transform 0.5s;
+        background-color: red;
+      }
+
+      #connector {
+        position: absolute;
+        width: calc((64 * 16px));
+        height: 4px;
+        transform: translate(16px, 23px);
+        background-color: lightblue;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module" src="/main.js"></script>
+    <div id="render">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div class="qubitStateContainer">
+      <div class="qubitStateTitle">Qubit State</div>
+      <div id="qubitState" class="qubitState">|0></div>
+    </div>
+    <div id="controls">
+      <div id="endLeftControl" class="control">|&lt;</div>
+      <div id="leftControl" class="control">&lt;</div>
+      <div id="rightControl" class="control">&gt;</div>
+      <div id="endRightControl" class="control">&gt;|</div>
+    </div>
+    <div>
+      <div id="pointer"></div>
+      <div id="connector"></div>
+      <div id="circuit"></div>
+    </div>
+    <div id="gates"></div>
+    <div>
+      <div class="control" id="resetControl">Reset</div>
+    </div>
+  </body>
+</html>
